@@ -12,10 +12,9 @@ reddit = praw.Reddit(client_id='ZRfPmQnieqTWUw',
                      password='timberline3',
                      user_agent='political leanings by /u/thisaccounttestsbots',
                      username='thisaccounttestsbots')
-conservative_reddits = ('The_Donald', 'conservative')
-liberal_reddits = ('liberal','SandersForPresident')
-common_words = ('AskReddit', 'funny')
-numPosts = 25
+conservative_reddits = ('The_Donald', 'conservative', 'hillaryforprison', 'republican')
+liberal_reddits = ('liberal','SandersForPresident', 'democrats', 'esist')
+numPosts = 50
 
 longwords = []
 def writeComments( redditsList, fileName, category ):
@@ -27,8 +26,6 @@ def writeComments( redditsList, fileName, category ):
         subreddit = reddit.subreddit(subreddits)
         hot = subreddit.top(limit=numPosts)
         for submission in hot:
-            words=[]
-            #submission.comments.replace_more(limit=0)
             submission.comment_sort = 'new'
             all_comments = submission.comments.list()
             for comments in all_comments[0:10]:

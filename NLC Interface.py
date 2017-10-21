@@ -16,3 +16,4 @@ text = 'I like trump'
 classification = natural_language_classifier.classify(classifier_id, text)
 class_name = classification['classes'][0]['class_name']
 confidence = classification['classes'][0]['confidence']
+print(confidence)
