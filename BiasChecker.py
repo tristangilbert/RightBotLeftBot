@@ -13,16 +13,19 @@ from watson_developer_cloud import NaturalLanguageClassifierV1
 
 natural_language_classifier = NaturalLanguageClassifierV1(
   username="66d51137-b6ef-4e73-9563-b71f3e742e45",
-  password="x760OVu4CbGR")
+  password="xxxx")
 
 classifier_id = 'ebd15ex229-nlc-67819'
 
-target_reddit = 'politics'
-scary_words = ['trump', 'bernie', 'cruz', 'tillerson', 'obama', 'devos', 'donald', 'hillary', 'obamacare', 'tax', 'podesta']
+target_reddit = 'Poitics'
+scary_words = ['trump', 'trans', 'islam', 'immigrant', 'communist', 'democrats', 'republicans', 'white house',
+               'bernie', 'cruz', 'tillerson', 'obama', 'devos', 'donald', 'hillary', 'obamacare', 'tax', 'podesta',
+               'mueller', 'election', 'aca', 'obamacare', 'puerto rico', 'abortion', 'minimum wage', 'putin', 'russia',
+               'FBI', 'sanders', 'gorsuch']
 
 reddit = praw.Reddit(client_id='ZRfPmQnieqTWUw',
                          client_secret='iUpQc7K0iRw8CZM6tGmPjRBBU4I',
-                         password='timberline3',
+                         password='xxx',
                          user_agent='political leanings by /u/thisaccounttestsbots',
                          username='thisaccounttestsbots')
     
@@ -76,9 +79,9 @@ def process_submission (submission):
             [bias, strength] = findBias(user)
             strength = strength*100
             strength_percent = str(strength)[0:4]
-            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " political inclinations across his/her last 50 comments"
-            reply_text += "\n\n\n Bear with me, I'm a bot. I check users' comment historys against IBM Watson's language classifier to predict political bias!"
-            reply_text += "\n Am I wrong/is there a better way to use this bot? Please comment/pm and let me know!"
+            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " political inclinations across his/her last 50 comments."
+            reply_text += "\n\n&nbsp;\n\n *Bear with me, I'm a bot. I check users' comment historys against IBM Watson's language classifier to predict political bias!"
+            reply_text += "\n Am I wrong/is there a better way to use this bot? Please comment/pm and let me know!*"
             submission.reply(reply_text)
             print("replied to submission")
             break
