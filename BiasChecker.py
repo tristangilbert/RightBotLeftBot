@@ -17,7 +17,7 @@ natural_language_classifier = NaturalLanguageClassifierV1(
 
 classifier_id = 'ebd15ex229-nlc-67819'
 
-target_reddit = 'politics'
+target_reddit = 'adviceanimals'
 scary_words = ['trump', 'bernie', 'cruz', 'tillerson', 'obama', 'devos', 'donald', 'hillary', 'obamacare', 'tax', 'podesta']
 
 reddit = praw.Reddit(client_id='ZRfPmQnieqTWUw',
