@@ -47,7 +47,7 @@ def main():
     
 
 def findBias (user):
-    comments = user.comments.new(limit=25)
+    comments = user.comments.new(limit=50)
     libPoints = 0
     conPoints = 0
     for comment in comments:
@@ -76,8 +76,8 @@ def process_submission (submission):
             [bias, strength] = findBias(user)
             strength = strength*100
             strength_percent = str(strength)[0:4]
-            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " inlinations across his/her last 25 comments"
-            reply_text += "\n\n\n Forgive me, I'm a bot. I check users' comment historys against IBM Watson's language classifier to predict political bias!"
+            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " inclinations across his/her last 25 comments"
+            reply_text += "\n\n\n Bear with me, I'm a bot. I check users' comment historys against IBM Watson's language classifier to predict political bias!"
             reply_text += "\n Am I wrong/is there a better way to use this bot? Please comment/pm and let me know!"
             submission.reply(reply_text)
             print("replied to submission")
