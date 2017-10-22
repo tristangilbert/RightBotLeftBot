@@ -17,7 +17,7 @@ natural_language_classifier = NaturalLanguageClassifierV1(
 
 classifier_id = 'ebd15ex229-nlc-67819'
 
-target_reddit = 'adviceanimals'
+target_reddit = 'politics'
 scary_words = ['trump', 'bernie', 'cruz', 'tillerson', 'obama', 'devos', 'donald', 'hillary', 'obamacare', 'tax', 'podesta']
 
 reddit = praw.Reddit(client_id='ZRfPmQnieqTWUw',
@@ -61,10 +61,10 @@ def findBias (user):
         if (class_name == 'conservative'):
             conPoints += confidence
     if libPoints > conPoints:
-        bias = 'liberal'
+        bias = 'leftward'
         strength = libPoints / (libPoints + conPoints)
     else:
-        bias = 'conservative'
+        bias = 'rightward'
         strength = conPoints / (libPoints + conPoints)
     return [bias, strength]
 
@@ -76,7 +76,7 @@ def process_submission (submission):
             [bias, strength] = findBias(user)
             strength = strength*100
             strength_percent = str(strength)[0:4]
-            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " inclinations across his/her last 50 comments"
+            reply_text = "Heads Up: OP has shown "+ str(strength_percent) +"% " + str(bias) + " political inclinations across his/her last 50 comments"
             reply_text += "\n\n\n Bear with me, I'm a bot. I check users' comment historys against IBM Watson's language classifier to predict political bias!"
             reply_text += "\n Am I wrong/is there a better way to use this bot? Please comment/pm and let me know!"
             submission.reply(reply_text)
