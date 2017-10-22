@@ -49,4 +49,4 @@ def findBias (username):
         strength = conPoints / (libPoints + conPoints)
     return [bias, strength]
 
-[bias, strength] = findBias('newcomputernewme')
+print(findBias('saijanai'))
