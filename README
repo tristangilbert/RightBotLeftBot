@@ -1,3 +1,6 @@
+# RightBotLeftBot
+### Tristan Gilbert
+
 RightBotLeftBot is a reddit bot that analyzes reddit users' political leanings. It finds reddit posts about controversial political topics and replies with a top level comment that guesses the severity and direction of the post author's political inclinations.
 
 The project is written in Python and uses the reddit API with PRAW wrapper and IBM's Watson Natural Language Classifier service/API.
